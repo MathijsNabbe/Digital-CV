@@ -1,0 +1,60 @@
+{
+    "other_history": [
+        {
+            "name": "Didden Distributie Maatschappij B.V.",
+            "city": "'s-Hertogenbosch",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "jobs": [
+                {
+                    "title": "Magazijnmedewerker",
+                    "description": "Het pakken van producten volgens een order en deze bestellingen inpakken.",
+                    "start": "11-2016",
+                    "end": "02-2017",
+                    "type": "parttime",
+                    "location": "on-site"
+                }
+            ]
+        },
+        {
+            "name": "McDonald's",
+            "city": "Rosmalen",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "jobs": [
+                {
+                    "title": "Crewlid",
+                    "description": "Bijbaan als allround crewlid waarbij ik alle functies bekleed van productie tot service.",
+                    "start": "11-2017",
+                    "end": "08-2020",
+                    "type": "parttime",
+                    "location": "on-site"
+                },
+                {
+                    "title": "RDM Food Quality",
+                    "description": "Extra functie bij een afdeling die verantwoordelijk is voor de kwaliteit van het voedsel dat geproduceerd wordt. Deze functie komt extra bij mijn gewone baan als crewlid, met dus extra taken naast mijn standaard werk.",
+                    "start": "05-2018",
+                    "end": "04-2020",
+                    "type": "parttime",
+                    "location": "on-site"
+                },
+                {
+                    "title": "Technisch Onderhoud",
+                    "description": "Een aparte functie die losstaat van mijn taken als crewlid, en waarvoor ik ook apart ingeroosterd werd. De functie Onderhoud bevat het schoonmaken, bijhouden en controleren van alle apparatuur binnen McDonalds, en onderdelen vervangen wanneer nodig.",
+                    "start": "09-2019",
+                    "end": "02-2020",
+                    "type": "parttime",
+                    "location": "on-site"
+                },
+                {
+                    "title": "Crew trainer",
+                    "description": "Nieuwe functie met meer leidinggevende aspecten, verantwoordelijkheden en taken zoals het trainen van nieuwe collega's. Dit komt bij mijn baan als crewlid én departement member. Inclusief een leerperiode als voorbereiding op de promotie van ca. 3 maanden.",
+                    "start": "06-2018",
+                    "end": "02-2020",
+                    "type": "parttime",
+                    "location": "on-site"
+                }
+            ]
+        }
+    ]
+}
