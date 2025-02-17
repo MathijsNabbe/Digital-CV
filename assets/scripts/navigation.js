@@ -1,11 +1,11 @@
-$(document).ready(function () {
-    $(window).scroll(function () {
-        let scrollPos = $(document).scrollTop();
-        $('nav a').each(function () {
-            let section = $($(this).attr('href'));
-            if (section.position().top <= scrollPos + 10) {
-                $('nav a').removeClass('active');
-                $(this).addClass('active');
+document.addEventListener("DOMContentLoaded", function () {
+    window.addEventListener("scroll", function () {
+        let scrollPos = document.documentElement.scrollTop || document.body.scrollTop;
+        document.querySelectorAll("nav a").forEach(function (link) {
+            let section = document.querySelector(link.getAttribute("href"));
+            if (section && section.offsetTop <= scrollPos + 10) {
+                document.querySelectorAll("nav a").forEach(a => a.classList.remove("active"));
+                link.classList.add("active");
             }
         });
     });
