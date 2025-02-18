@@ -1,5 +1,11 @@
-<nav>
-    {% for item in site.data.navigation %}
-      <a href="{{ item.link }}"{% if page.url == item.link %} class="current"{% endif %}>{{ item.name }}</a>
-    {% endfor %}
-  </nav>
+<nav class="sidebar">
+  <div class="profile-picture">
+    <img src="assets/images/profile.jpg" alt="Profile Picture">
+  </div>
+  <ul>
+    <li><a href="#about" class="active">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
