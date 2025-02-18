@@ -186,5 +186,125 @@
                 }
             ]
         }
+    ],
+    "education": [
+        {
+            "name": "Koning Willem I College",
+            "city": "'s-Hertogenbosch",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "degree": "MBO 4",
+            "field": "Applicatie- en Mediaontwikkelaar",
+            "start": "09-2019",
+            "end": "07-2022",
+            "status": "completed"
+        },
+        {
+            "name": "Rodenborch College",
+            "city": "Rosmalen",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "degree": "HAVO",
+            "field": "Natuur-Gezondheid (NG)",
+            "start": "09-2013",
+            "end": "07-2019",
+            "status": "dropped"
+        }
+    ],
+    "certificates": [
+        {
+            "name": "Rijbewijs B",
+            "issuer": "CBR",
+            "date": "06-2021",
+            "valid_until": "",
+            "reference": ""
+        },
+        {
+            "name": "Bedrijfshulpverlener (BHV)",
+            "issuer": "EHBOService.eu",
+            "date": "03-2023",
+            "valid_until": "03-2024",
+            "reference": "2023030179"
+        }
+    ],
+    "conferences": [
+        {
+            "name": "Messaging: The fine line between awesome and awful",
+            "organizer": ".NET Zuid",
+            "spokesperson": "Laila Bougria",
+            "venue": "Sioux Technologies",
+            "city": "Eindhoven",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "start": "27-02-2023",
+            "end": "27-02-2023",
+            "type": "hearing",
+            "location": "on-site"
+        },
+        {
+            "name": "There's no such thing as plain text",
+            "organizer": ".NET Zuid",
+            "spokesperson": "Dylan Beattie",
+            "venue": "ASML Technologies",
+            "city": "Eindhoven",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "start": "11-04-2023",
+            "end": "11-04-2023",
+            "type": "hearing",
+            "location": "on-site"
+        },
+        {
+            "name": "What's new in C#12 and .NET8",
+            "organizer": ".NET Zuid",
+            "spokesperson": "Fons Sonnemans",
+            "venue": "Hightech ICT",
+            "city": "'s-Hertogenbosch",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "start": "16-11-2023",
+            "end": "16-11-2023",
+            "type": "hearing",
+            "location": "on-site"
+        },
+        {
+            "name": "Unlocking the power of the Fluent UI Blazor library",
+            "organizer": ".NET Zuid",
+            "spokesperson": "Vincent Baaij",
+            "venue": "Hightech ICT",
+            "city": "'s-Hertogenbosch",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "start": "24-09-2024",
+            "end": "24-09-2024",
+            "type": "hearing",
+            "location": "on-site"
+        },
+        {
+            "name": "An evening with Scott Hanselman",
+            "organizer": ".NET Zuid",
+            "spokesperson": "Scott Hanselman",
+            "venue": "Theater De Schalm",
+            "city": "Veldhoven",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "start": "22-11-2024",
+            "end": "22-11-2024",
+            "type": "hearing",
+            "location": "on-site"
+        },
+        {
+            "name": "Test your Web App with Playwright",
+            "organizer": ".NET Zuid",
+            "spokesperson": "Johan Smarius",
+            "venue": "BetaBit",
+            "city": "Eindhoven",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "start": "20-02-2025",
+            "end": "20-02-2025",
+            "type": "hearing",
+            "location": "on-site"
+        }
     ]
 }
