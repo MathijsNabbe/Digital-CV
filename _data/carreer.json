@@ -1,4 +1,70 @@
 {
+    "technical_history": [
+        {
+            "name": "COERS Online Branding",
+            "city": "'s-Hertogenbosch",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "jobs": [
+                {
+                    "title": "Stagair Webdevelopment",
+                    "description": "",
+                    "start": "02-2022",
+                    "end": "06-2022",
+                    "type": "stage",
+                    "location": "on-site"
+                },
+                {
+                    "title": "Junior Webdeveloper",
+                    "description": "",
+                    "start": "12-2020",
+                    "end": "02-2022",
+                    "type": "parttime",
+                    "location": "on-site"
+                },
+                {
+                    "title": "Stagair Webdevelopment",
+                    "description": "",
+                    "start": "08-2020",
+                    "end": "01-2021",
+                    "type": "stage",
+                    "location": "on-site"
+                }
+            ]
+        },
+        {
+            "name": "Quadira B.V.",
+            "city": "Veghel",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "jobs": [
+                {
+                    "title": "Junior Software Developer",
+                    "description": "",
+                    "start": "08-2022",
+                    "end": "03-2025",
+                    "type": "fulltime",
+                    "location": "on-site"
+                },
+                {
+                    "title": "Bedrijfshulpverlener (BHV)",
+                    "description": "",
+                    "start": "03-2023",
+                    "end": "",
+                    "type": "fulltime",
+                    "location": "on-site"
+                },
+                {
+                    "title": "Software Developer",
+                    "description": "",
+                    "start": "03-2025",
+                    "end": "",
+                    "type": "fulltime",
+                    "location": "on-site"
+                }
+            ]
+        }
+    ],
     "other_history": [
         {
             "name": "Didden Distributie Maatschappij B.V.",
@@ -51,6 +117,70 @@
                     "description": "Nieuwe functie met meer leidinggevende aspecten, verantwoordelijkheden en taken zoals het trainen van nieuwe collega's. Dit komt bij mijn baan als crewlid én departement member. Inclusief een leerperiode als voorbereiding op de promotie van ca. 3 maanden.",
                     "start": "06-2018",
                     "end": "02-2020",
+                    "type": "parttime",
+                    "location": "on-site"
+                }
+            ]
+        },
+        {
+            "name": "Q-Wash",
+            "city": "Rosmalen",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "jobs": [
+                {
+                    "title": "Carwash-medwerker",
+                    "description": "",
+                    "start": "11-2020",
+                    "end": "07-2021",
+                    "type": "parttime",
+                    "location": "on-site"
+                }
+            ]
+        },
+        {
+            "name": "Fletcher Hotels",
+            "city": "Rosmalen",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "jobs": [
+                {
+                    "title": "1e Bediende Medewerker",
+                    "description": "Van het begin tot eind van een dienst ervoor kunnen zorgen dat alle werkzaamheden goed verlopen en de gasten tevreden naar huis gaan. Dit bevat vooral het overzicht houden, het aansturen van collega's waar nodig, en het 1e gezicht zijn in het restaurant bij klachten of opmerkingen. Ook hoort hierbij de verantwoordelijkheid om het restaurant en administratie goed af te sluiten en te controleren en waar nodig te corrigeren.",
+                    "start": "11-2021",
+                    "end": "07-2022",
+                    "type": "parttime",
+                    "location": "on-site"
+                },
+                {
+                    "title": "Restaurantmedewerker",
+                    "description": "Alle basisfuncties van het restaurant, inclusief bartaken, bedieningstaken, het te woord staan van gasten met problemen, kassaverantwoordelijkheden, maar ook achter de schermen het afsluiten van het restaurant, de dagadministratie en het opruimen van binnenkomende bestellingen. Daarnaast in drukke situaties ook nog bijspringen in de keuken of bij de housekeeping.",
+                    "start": "06-2021",
+                    "end": "07-2022",
+                    "type": "parttime",
+                    "location": "on-site"
+                },
+                {
+                    "title": "Housekeeping Assistant",
+                    "description": "",
+                    "start": "04-2021",
+                    "end": "06-2021",
+                    "type": "parttime",
+                    "location": "on-site"
+                }
+            ]
+        },
+        {
+            "name": "Bus Whisky",
+            "city": "Loosbroek",
+            "region": "Noord-Brabant",
+            "country": "Netherlands",
+            "jobs": [
+                {
+                    "title": "Bediening",
+                    "description": "",
+                    "start": "12-2024",
+                    "end": "",
                     "type": "parttime",
                     "location": "on-site"
                 }
