@@ -156,7 +156,7 @@
                     "title": "Restaurantmedewerker",
                     "description": "Alle basisfuncties van het restaurant, inclusief bartaken, bedieningstaken, het te woord staan van gasten met problemen, kassaverantwoordelijkheden, maar ook achter de schermen het afsluiten van het restaurant, de dagadministratie en het opruimen van binnenkomende bestellingen. Daarnaast in drukke situaties ook nog bijspringen in de keuken of bij de housekeeping.",
                     "start": "06-2021",
-                    "end": "07-2022",
+                    "end": "11-2021",
                     "type": "parttime",
                     "location": "on-site"
                 },
@@ -231,6 +231,20 @@
             "reference": ""
         },
         {
+            "name": "Training Advanced-Forms voor 365 Business Central",
+            "issuer": "Quadira B.V.",
+            "date": "11-08-2022",
+            "valid_until": "",
+            "reference": ""
+        },
+        {
+            "name": "Training Advanced-Forms voor F&O Full",
+            "issuer": "Quadira B.V.",
+            "date": "29-08-2022",
+            "valid_until": "",
+            "reference": ""
+        },
+        {
             "name": "Bedrijfshulpverlener (BHV)",
             "issuer": "EHBOService.eu",
             "date": "03-2023",
@@ -247,8 +261,7 @@
             "city": "Eindhoven",
             "region": "Noord-Brabant",
             "country": "Netherlands",
-            "start": "27-02-2023",
-            "end": "27-02-2023",
+            "date": "27-02-2023",
             "type": "hearing",
             "location": "on-site"
         },
@@ -260,8 +273,7 @@
             "city": "Eindhoven",
             "region": "Noord-Brabant",
             "country": "Netherlands",
-            "start": "11-04-2023",
-            "end": "11-04-2023",
+            "date": "11-04-2023",
             "type": "hearing",
             "location": "on-site"
         },
@@ -273,8 +285,7 @@
             "city": "'s-Hertogenbosch",
             "region": "Noord-Brabant",
             "country": "Netherlands",
-            "start": "16-11-2023",
-            "end": "16-11-2023",
+            "date": "16-11-2023",
             "type": "hearing",
             "location": "on-site"
         },
@@ -286,8 +297,7 @@
             "city": "'s-Hertogenbosch",
             "region": "Noord-Brabant",
             "country": "Netherlands",
-            "start": "24-09-2024",
-            "end": "24-09-2024",
+            "date": "24-09-2024",
             "type": "hearing",
             "location": "on-site"
         },
@@ -299,8 +309,7 @@
             "city": "Veldhoven",
             "region": "Noord-Brabant",
             "country": "Netherlands",
-            "start": "22-11-2024",
-            "end": "22-11-2024",
+            "date": "22-11-2024",
             "type": "hearing",
             "location": "on-site"
         },
@@ -312,8 +321,7 @@
             "city": "Eindhoven",
             "region": "Noord-Brabant",
             "country": "Netherlands",
-            "start": "20-02-2025",
-            "end": "20-02-2025",
+            "date": "20-02-2025",
             "type": "hearing",
             "location": "on-site"
         }
