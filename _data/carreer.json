@@ -187,6 +187,17 @@
             ]
         }
     ],
+    "volunteering": [
+        {
+            "name": "Creventic",
+            "title": "Evenement-assistentie",
+            "event": "Porsche 992 Endurance Cup",
+            "venue": "Circuit Spa Francorchamps",
+            "country": "Belgium",
+            "start": "07-2024",
+            "end": "08-2024"
+        }
+    ],
     "education": [
         {
             "name": "Koning Willem I College",
