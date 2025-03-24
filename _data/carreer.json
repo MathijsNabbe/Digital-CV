@@ -250,6 +250,13 @@
             "date": "03-2023",
             "valid_until": "03-2024",
             "reference": "2023030179"
+        },
+        {
+            "name": "Horeca OpleidingsProgramma (HOP)",
+            "issuer": "Royal Swinkels",
+            "date": "03-2025",
+            "valid_until": "",
+            "reference": ""
         }
     ],
     "conferences": [
