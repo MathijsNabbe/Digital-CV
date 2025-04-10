@@ -30,7 +30,7 @@ jobs:
             -Dsonar.projectKey=Digital-CV \
             -Dsonar.projectName=Digital-CV \
             -Dsonar.projectVersion=1.0 \
-            -Dsonar.sources=. \
+            -Dsonar.sources=_site \
             -Dsonar.host.url=http://analysis.mathijsnabbe.nl \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
             -Dsonar.pullrequest.key=${{ github.event.pull_request.number }} \
