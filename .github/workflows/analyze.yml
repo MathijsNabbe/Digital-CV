@@ -10,7 +10,7 @@ on:
 
 jobs:
   sonar-analysis:
-    runs-on: [self-hosted, linux]
+    runs-on: [self-hosted, linux, jekyll]
     
     steps:
       - name: Checkout code
