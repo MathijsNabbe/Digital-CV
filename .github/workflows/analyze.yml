@@ -24,14 +24,6 @@ jobs:
         run: |
           bundle exec jekyll build
 
-      - name: Set up SonarQube Scanner
-        run: |
-          # Download and install the SonarScanner if it's not installed yet
-          wget https://github.com/SonarSource/sonar-scanner-cli/releases/download/4.7.0.2747/sonar-scanner-4.7.0.2747-linux.zip
-          unzip sonar-scanner-4.7.0.2747-linux.zip
-          export PATH=$PWD/sonar-scanner-4.7.0.2747-linux/bin:$PATH
-          sonar-scanner --version
-
       - name: SonarQube Analysis
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
