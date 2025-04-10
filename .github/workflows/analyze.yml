@@ -24,23 +24,16 @@ jobs:
         run: |
           bundle exec jekyll build
 
-      - name: Set the branch name variable
-        id: set_branch_name
-        run: echo "BRANCH_NAME=$(echo ${GITHUB_REF} | sed 's/refs\\/heads\\///')" >> $GITHUB_ENV
-
-      - name: Debug Branch Name
-        run: echo "Branch Name ${{ env.BRANCH_NAME }}"
-
       - name: SonarQube Analysis
         run: |
           sonar-scanner \
             -Dsonar.projectKey=Digital-CV \
             -Dsonar.projectName=Digital-CV \
             -Dsonar.projectVersion=1.0 \
-            -Dsonar.sources=_site \
+            -Dsonar.sources=. \
             -Dsonar.host.url=http://analysis.mathijsnabbe.nl \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
-            -Dsonar.branch.name=${{ env.BRANCH_NAME }} \
+            -Dsonar.branch=${{ github.head_ref }} \
             -Dsonar.pullrequest.key=${{ github.event.pull_request.number }} \
             -Dsonar.pullrequest.branch=${{ github.head_ref }} \
             -Dsonar.pullrequest.base=${{ github.base_ref }}
