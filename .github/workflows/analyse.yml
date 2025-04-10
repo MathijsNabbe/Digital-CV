@@ -25,15 +25,10 @@ jobs:
           bundle exec jekyll build
 
       - name: SonarQube Analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PR_KEY: ${{ github.event.pull_request.number }}
+          SONAR_BRANCH: ${{ github.head_ref }}
+          SONAR_BASE: ${{ github.base_ref }}
         run: |
-          sonar-scanner \
-            -Dsonar.projectKey=Digital-CV \
-            -Dsonar.projectName=Digital-CV \
-            -Dsonar.projectVersion=1.0 \
-            -Dsonar.sources=_site \
-            -Dsonar.inclusions=_site/**/*.{html,css}
-            -Dsonar.host.url=http://analysis.mathijsnabbe.nl \
-            -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
-            -Dsonar.pullrequest.key=${{ github.event.pull_request.number }} \
-            -Dsonar.pullrequest.branch=${{ github.head_ref }} \
-            -Dsonar.pullrequest.base=${{ github.base_ref }}
+          sonar-scanner
