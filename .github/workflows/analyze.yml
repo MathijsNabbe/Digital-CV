@@ -29,7 +29,7 @@ jobs:
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF} | sed 's/refs\\/heads\\///')" >> $GITHUB_ENV
 
       - name: Debug Branch Name
-        run: echo "Branch Name: ${{ env.BRANCH_NAME }}"
+        run: echo "Branch Name ${{ env.BRANCH_NAME }}"
 
       - name: SonarQube Analysis
         run: |
