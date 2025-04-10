@@ -28,6 +28,9 @@ jobs:
         id: set_branch_name
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF} | sed 's/refs\\/heads\\///')" >> $GITHUB_ENV
 
+      - name: Debug Branch Name
+        run: echo "Branch Name: ${{ env.BRANCH_NAME }}"
+
       - name: SonarQube Analysis
         run: |
           sonar-scanner \
@@ -36,5 +39,8 @@ jobs:
             -Dsonar.projectVersion=1.0 \
             -Dsonar.sources=_site \
             -Dsonar.host.url=http://analysis.mathijsnabbe.nl \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
-            -Dsonar.branch.name=${{ env.BRANCH_NAME }}  # Pass the branch name dynamically
+            -Dsonar.token=${{ secrets.SONAR_TOKEN }} \
+            -Dsonar.branch.name=${{ env.BRANCH_NAME }} \
+            -Dsonar.pullrequest.key=${{ github.event.pull_request.number }} \
+            -Dsonar.pullrequest.branch=${{ github.head_ref }} \
+            -Dsonar.pullrequest.base=${{ github.base_ref }}
