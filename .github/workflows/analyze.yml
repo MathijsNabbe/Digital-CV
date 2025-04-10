@@ -16,14 +16,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Ruby (for Jekyll)
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '2.7'
-
       - name: Install Jekyll and Dependencies
         run: |
-          gem install jekyll bundler
           bundle install
 
       - name: Build the Jekyll site
