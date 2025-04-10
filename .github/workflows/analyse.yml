@@ -1,0 +1,34 @@
+name: SonarQube Analysis
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  sonar-analysis:
+    runs-on: [self-hosted, linux, jekyll]
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install Jekyll and Dependencies
+        run: |
+          bundle install
+
+      - name: Build the Jekyll site
+        run: |
+          bundle exec jekyll build
+
+      - name: SonarQube Analysis
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PR_KEY: ${{ github.event.pull_request.number }}
+          SONAR_BRANCH: ${{ github.head_ref }}
+          SONAR_BASE: ${{ github.base_ref }}
+        run: |
+          sonar-scanner
