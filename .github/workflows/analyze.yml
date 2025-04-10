@@ -22,7 +22,7 @@ jobs:
 
       - name: Build the Jekyll site
         run: |
-          bundle exec jekyll build --trace
+          bundle exec jekyll build
 
       - name: Set up SonarQube Scanner
         run: |
