@@ -1,7 +1,2 @@
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
-
 domain: mathijsnabbe.nl       
 url: https://mathijsnabbe.nl
