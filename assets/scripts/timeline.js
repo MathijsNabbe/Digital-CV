@@ -52,21 +52,44 @@ async function loadTimeline() {
             });
         });
 
-        // Create category toggle buttons
+        // Track all buttons to manage 'active' style
+        const buttons = [];
+
+        function setActiveButton(activeBtn) {
+            buttons.forEach(btn => btn.classList.remove('btn-primary'));
+            buttons.forEach(btn => btn.classList.add('btn-outline-primary'));
+            activeBtn.classList.remove('btn-outline-primary');
+            activeBtn.classList.add('btn-primary');
+        }
+
+        // "All" button
+        const allButton = document.createElement('button');
+        allButton.className = 'btn btn-primary btn-sm me-2'; // Selected by default
+        allButton.textContent = 'All';
+        allButton.onclick = () => {
+            document.querySelectorAll('.category-card').forEach(el => el.style.display = 'block');
+            setActiveButton(allButton);
+        };
+        buttonGroup.appendChild(allButton);
+        buttons.push(allButton);
+
+        // Category buttons
         categories.forEach(cat => {
             const button = document.createElement('button');
             button.className = 'btn btn-outline-primary btn-sm me-2';
             button.dataset.category = cat.id;
             button.textContent = cat.name;
             button.onclick = () => {
-                document.querySelectorAll(`.category-card`).forEach(el => el.style.display = 'none');
+                document.querySelectorAll('.category-card').forEach(el => el.style.display = 'none');
                 document.querySelectorAll(`.${cat.id}`).forEach(el => el.style.display = 'block');
+                setActiveButton(button);
             };
             buttonGroup.appendChild(button);
+            buttons.push(button);
         });
 
         // Show all by default
-        document.querySelectorAll(`.category-card`).forEach(el => el.style.display = 'block');
+        document.querySelectorAll('.category-card').forEach(el => el.style.display = 'block');
 
     } catch (error) {
         root.innerHTML = `<p class="text-danger">Failed to load timeline data.</p>`;

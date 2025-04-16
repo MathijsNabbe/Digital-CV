@@ -68,6 +68,27 @@
           ]
         }
       ]
+    },
+    {
+      "category": "Side Jobs",
+      "entries": [
+        {
+          "organization": "Didden Distributie Maatschappij B.V.",
+          "city": "'s-Hertogenbosch",
+          "region": "Noord-Brabant",
+          "country": "Netherlands",
+          "jobs": [
+            {
+              "title": "Magazijnmedewerker",
+              "description": "",
+              "start": "11-2016",
+              "end": "02-2017",
+              "type": "Parttime",
+              "location": "On-site"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
