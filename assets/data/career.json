@@ -1,0 +1,73 @@
+{
+  "timeline": [
+    {
+      "category": "Technical History",
+      "entries": [
+        {
+          "organization": "COERS Online Branding",
+          "city": "'s-Hertogenbosch",
+          "region": "Noord-Brabant",
+          "country": "Netherlands",
+          "jobs": [
+            {
+              "title": "Stagair Webdevelopment",
+              "description": "",
+              "start": "02-2022",
+              "end": "06-2022",
+              "type": "Internship",
+              "location": "On-site"
+            },
+            {
+              "title": "Junior Webdeveloper",
+              "description": "",
+              "start": "12-2020",
+              "end": "02-2022",
+              "type": "Parttime",
+              "location": "On-site"
+            },
+            {
+              "title": "Stagair Webdevelopment",
+              "description": "",
+              "start": "08-2020",
+              "end": "01-2021",
+              "type": "Internship",
+              "location": "On-site"
+            }
+          ]
+        },
+        {
+          "organization": "Quadira B.V.",
+          "city": "Veghel",
+          "region": "Noord-Brabant",
+          "country": "Netherlands",
+          "jobs": [
+            {
+              "title": "Junior Software Developer",
+              "description": "",
+              "start": "08-2022",
+              "end": "03-2025",
+              "type": "Fulltime",
+              "location": "On-site"
+            },
+            {
+              "title": "Bedrijfshulpverlener (BHV)",
+              "description": "",
+              "start": "03-2023",
+              "end": "",
+              "type": "Fulltime",
+              "location": "On-site"
+            },
+            {
+              "title": "Software Developer",
+              "description": "",
+              "start": "03-2025",
+              "end": "",
+              "type": "Fulltime",
+              "location": "On-site"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
