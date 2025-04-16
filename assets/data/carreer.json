@@ -1,0 +1,33 @@
+{
+  "timeline": [
+    {
+      "category": "Technical History",
+      "entries": [
+        {
+          "organization": "Company",
+          "city": "City",
+          "region": "region",
+          "country": "country",
+          "jobs": [
+            {
+              "title": "Stagair Webdevelopment",
+              "description": "test",
+              "start": "02-2022",
+              "end": "06-2022",
+              "type": "Internship",
+              "location": "On-site"
+            },
+            {
+              "title": "Junior Webdeveloper",
+              "description": "test",
+              "start": "12-2020",
+              "end": "02-2022",
+              "type": "Parttime",
+              "location": "On-site"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
