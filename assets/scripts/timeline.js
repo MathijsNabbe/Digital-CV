@@ -109,7 +109,7 @@ function compareDates(a, b) {
 function renderCard(entry, root) {
     entry.jobs.sort((a, b) => parseDate(b.start) - parseDate(a.start));
 
-    const { start, end, duration, orgLocation, jobsHtml } = calculateCardDetails(entry);
+    const { duration, orgLocation, jobsHtml } = calculateCardDetails(entry);
 
     const card = document.createElement('div');
     card.className = `col category-card ${entry.categoryId} mb-4`;
