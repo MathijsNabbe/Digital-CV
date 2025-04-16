@@ -7,7 +7,7 @@ async function loadTimeline() {
         const categories = extractCategories(data);
 
         const buttons = createCategoryButtons(categories, buttonGroup, data, root);
-        
+
         // Render timeline and default active button
         renderTimeline(data, root);
         setActiveButton(buttons[0]);
@@ -32,7 +32,7 @@ function extractCategories(data) {
 
 function createCategoryButtons(categories, buttonGroup, data, root) {
     const buttons = [];
-    
+
     // Create "All" button
     const allButton = createButton('All', 'btn-primary', buttonGroup, () => {
         renderTimeline(data, root); // All entries
@@ -175,7 +175,7 @@ function parseDate(monthYear) {
 }
 
 function formatDateLabel(monthYear) {
-    return monthYear ? monthYear : "Current";
+    return monthYear || "Current";
 }
 
 loadTimeline();
