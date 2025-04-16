@@ -89,9 +89,15 @@ function calculateDuration(start, end) {
     const endDate = parseDate(end);
     const months = (endDate.getFullYear() - startDate.getFullYear()) * 12 +
         (endDate.getMonth() - startDate.getMonth());
+
     const years = Math.floor(months / 12);
     const remMonths = months % 12;
-    return `${years} year(s) ${remMonths} month(s)`;
+
+    const parts = [];
+    if (years > 0) parts.push(`${years} year${years > 1 ? 's' : ''}`);
+    if (remMonths > 0) parts.push(`${remMonths} month${remMonths > 1 ? 's' : ''}`);
+
+    return parts.length > 0 ? parts.join(' ') : 'Less than a month';
 }
 
 loadTimeline();
