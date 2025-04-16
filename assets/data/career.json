@@ -127,6 +127,107 @@
               "location": "On-site"
             }
           ]
+        },
+        {
+          "organization": "Q-Wash",
+          "city": "Rosmalen",
+          "region": "Noord-Brabant",
+          "country": "Netherlands",
+          "jobs": [
+            {
+              "title": "Carwash-medwerker",
+              "description": "",
+              "start": "11-2020",
+              "end": "07-2021",
+              "type": "Parttime",
+              "location": "On-site"
+            }
+          ]
+        },
+        {
+          "organization": "Fletcher Hotels",
+          "city": "Rosmalen",
+          "region": "Noord-Brabant",
+          "country": "Netherlands",
+          "jobs": [
+            {
+              "title": "1e Bediende Medewerker",
+              "description": "",
+              "start": "11-2021",
+              "end": "07-2022",
+              "type": "Parttime",
+              "location": "On-site"
+            },
+            {
+              "title": "Restaurantmedewerker",
+              "description": "",
+              "start": "06-2021",
+              "end": "11-2021",
+              "type": "Parttime",
+              "location": "On-site"
+            },
+            {
+              "title": "Housekeeping Assistant",
+              "description": "",
+              "start": "04-2021",
+              "end": "06-2021",
+              "type": "Parttime",
+              "location": "On-site"
+            }
+          ]
+        },
+        {
+          "organization": "Bus Whisky",
+          "city": "Loosbroek",
+          "region": "Noord-Brabant",
+          "country": "Netherlands",
+          "jobs": [
+            {
+              "title": "Bediening",
+              "description": "",
+              "start": "12-2024",
+              "end": "",
+              "type": "Parttime",
+              "location": "On-site"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Education",
+      "entries": [
+        {
+          "organization": "Koning Willem I College",
+          "city": "'s-Hertogenbosch",
+          "region": "Noord-Brabant",
+          "country": "Netherlands",
+          "jobs": [
+            {
+              "title": "Applicatie- en Mediaontwikkelaar (MBO 4)",
+              "description": "",
+              "start": "09-2019",
+              "end": "07-2022",
+              "type": "Completed",
+              "location": "On-site"
+            }
+          ]
+        },
+        {
+          "organization": "Rodenborch College",
+          "city": "Rosmalen",
+          "region": "Noord-Brabant",
+          "country": "Netherlands",
+          "jobs": [
+            {
+              "title": "Natuur-Gezondheid (HAVO)",
+              "description": "",
+              "start": "09-2013",
+              "end": "07-2019",
+              "type": "Drop-Out",
+              "location": "On-site"
+            }
+          ]
         }
       ]
     }
