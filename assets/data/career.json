@@ -87,6 +87,46 @@
               "location": "On-site"
             }
           ]
+        },
+        {
+          "organization": "McDonald's",
+          "city": "Rosmalen",
+          "region": "Noord-Brabant",
+          "country": "Netherlands",
+          "jobs": [
+            {
+              "title": "Crewlid",
+              "description": "",
+              "start": "11-2017",
+              "end": "08-2020",
+              "type": "Parttime",
+              "location": "On-site"
+            },
+            {
+              "title": "RDM Food Quality",
+              "description": "",
+              "start": "05-2018",
+              "end": "04-2020",
+              "type": "Parttime",
+              "location": "On-site"
+            },
+            {
+              "title": "Technical Maintenance",
+              "description": "",
+              "start": "09-2019",
+              "end": "02-2020",
+              "type": "Parttime",
+              "location": "On-site"
+            },
+            {
+              "title": "Crew trainer",
+              "description": "",
+              "start": "06-2018",
+              "end": "02-2020",
+              "type": "Parttime",
+              "location": "On-site"
+            }
+          ]
         }
       ]
     }
