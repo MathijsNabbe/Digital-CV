@@ -1,16 +1,30 @@
 function parseDate(dateStr) {
     if (!dateStr) return new Date(); // Use current date if missing
-    const [month, year] = dateStr.split("-");
-    return new Date(`${year}-${month}-01`);
+    if (dateStr.includes("-")) {
+        const parts = dateStr.split("-");
+        if (parts.length === 2) {
+            const [month, year] = parts;
+            return new Date(`${year}-${month}-01`);
+        } else if (parts.length === 3) {
+            const [day, month, year] = parts;
+            return new Date(`${year}-${month}-${day}`);
+        }
+    }
+    return new Date(dateStr);
 }
 
 function formatMonthYear(dateStr) {
     if (!dateStr) return "Current";
-    const [month, year] = dateStr.split("-");
-    return new Date(`${year}-${month}-01`).toLocaleString('default', {
+    const date = parseDate(dateStr);
+    return date.toLocaleString('default', {
         month: 'long',
         year: 'numeric'
     });
+}
+
+function formatFullDate(dateStr) {
+    const date = parseDate(dateStr);
+    return date.toLocaleDateString('en-GB');
 }
 
 function getMonthDiff(startDate, endDate) {
@@ -29,27 +43,26 @@ function formatDuration(months) {
 
 function getJobRange(jobs) {
     const starts = jobs.map(j => parseDate(j.start));
-    const ends = jobs.map(j => parseDate(j.end));
+    const ends = jobs.map(j => parseDate(j.end || null));
     const minStart = new Date(Math.min(...starts));
     const maxEnd = new Date(Math.max(...ends));
     return {
         start: minStart.toLocaleString('default', { month: 'long', year: 'numeric' }),
-        end: maxEnd.toLocaleString('default', { month: 'long', year: 'numeric' }),
-        totalMonths: getMonthDiff(minStart, maxEnd)
+        end: ends.some(e => !e || e.toString() === new Date().toString()) ? "Current" : maxEnd.toLocaleString('default', { month: 'long', year: 'numeric' }),
+        totalMonths: getMonthDiff(minStart, new Date())
     };
 }
 
 function createCompanyCard(org, locationText, jobs, category) {
-    jobs.sort((a, b) => parseDate(a.start) - parseDate(b.start));
+    jobs.sort((a, b) => parseDate(b.start) - parseDate(a.start));
     const range = getJobRange(jobs);
     const formattedDuration = formatDuration(range.totalMonths);
 
     const jobDetails = jobs.map(job => {
         const start = parseDate(job.start);
-        const end = parseDate(job.end);
+        const end = parseDate(job.end || null);
         const monthDiff = getMonthDiff(start, end);
         const durationStr = formatDuration(monthDiff);
-
         return `
           <div class="mb-3">
             <strong>${job.title}</strong><br/>
@@ -82,14 +95,38 @@ function createCompanyCard(org, locationText, jobs, category) {
     return card;
 }
 
+function createConferenceCard(entry, category) {
+    const dateObj = parseDate(entry.date);
+
+    const card = document.createElement('div');
+    card.className = 'timeline-5 right-5';
+    card.dataset.category = category;
+
+    card.innerHTML = `
+      <div class="card">
+        <div class="card-body p-4">
+          <h5>${entry.organization}</h5>
+          <small><i class="fas fa-calendar-alt me-1"></i>${formatFullDate(entry.date)}</small><br/>
+          <hr>
+          <strong>${entry.eventName}</strong><br/>
+          <small>By <a href="${entry.spokesperson.link}" target="_blank">${entry.spokesperson.name}</a> at <a href="${entry.venue.link}" target="_blank">${entry.venue.name}</a></small><br/>
+          <small>${entry.city}, ${entry.region}, ${entry.country}</small><br/>
+          <small>${entry.type} | ${entry.location}</small>
+        </div>
+      </div>
+    `;
+    return { card, latestEndDate: dateObj };
+}
+
 function renderFilters(categories) {
     const filterContainer = document.getElementById('categoryFilters');
     filterContainer.innerHTML = '';
 
     const allBtn = document.createElement('button');
-    allBtn.className = 'btn btn-outline-primary m-1 active';
+    allBtn.className = 'btn btn-outline-primary m-1';
     allBtn.textContent = 'All';
     allBtn.dataset.category = 'all';
+    allBtn.classList.add('active')
     filterContainer.appendChild(allBtn);
 
     categories.forEach(category => {
@@ -119,32 +156,28 @@ function renderTimeline(data) {
     container.innerHTML = '';
 
     const categorySet = new Set();
-    const companyCards = [];
+    const allCards = [];
 
     data.timeline.forEach(category => {
         const categoryName = category.category;
         categorySet.add(categoryName);
 
         category.entries.forEach(entry => {
-            const locationText = `${entry.city}, ${entry.region}, ${entry.country}`;
-
-            // Sort jobs per company
-            entry.jobs.sort((a, b) => parseDate(a.start) - parseDate(b.start));
-
-            // Find latest end date per company
-            const latestJob = entry.jobs.reduce((latest, current) =>
-                parseDate(current.end) > parseDate(latest.end) ? current : latest
-            );
-            const latestEndDate = parseDate(latestJob.end);
-
-            // Generate card and save with end date
-            const card = createCompanyCard(entry.organization, locationText, entry.jobs, categoryName);
-            companyCards.push({ card, latestEndDate });
+            if (entry.jobs) {
+                const locationText = `${entry.city}, ${entry.region}, ${entry.country}`;
+                const card = createCompanyCard(entry.organization, locationText, entry.jobs, categoryName);
+                const latestEnd = entry.jobs.reduce((latest, current) =>
+                    parseDate(current.end || null) > parseDate(latest.end || null) ? current : latest
+                );
+                allCards.push({ card, latestEndDate: parseDate(latestEnd.end || null) });
+            } else {
+                const conf = createConferenceCard(entry, categoryName);
+                allCards.push(conf);
+            }
         });
     });
 
-    // Sort company cards by latest end date (descending)
-    companyCards
+    allCards
         .sort((a, b) => b.latestEndDate - a.latestEndDate)
         .forEach(item => container.appendChild(item.card));
 
