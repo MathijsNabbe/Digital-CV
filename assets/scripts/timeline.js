@@ -178,6 +178,7 @@ function renderTimeline(data) {
     });
 
     allCards
+        .slice()
         .sort((a, b) => b.latestEndDate - a.latestEndDate)
         .forEach(item => container.appendChild(item.card));
 
