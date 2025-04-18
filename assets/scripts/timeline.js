@@ -1,9 +1,11 @@
 function parseDate(dateStr) {
+    if (!dateStr) return new Date(); // Use current date if missing
     const [month, year] = dateStr.split("-");
     return new Date(`${year}-${month}-01`);
 }
 
 function formatMonthYear(dateStr) {
+    if (!dateStr) return "Current";
     const [month, year] = dateStr.split("-");
     return new Date(`${year}-${month}-01`).toLocaleString('default', {
         month: 'long',
@@ -49,15 +51,15 @@ function createCompanyCard(org, locationText, jobs, category) {
         const durationStr = formatDuration(monthDiff);
 
         return `
-        <div class="mb-3">
-          <strong>${job.title}</strong><br/>
-          <small class="text-muted">
-            ${formatMonthYear(job.start)} – ${formatMonthYear(job.end)} · (${durationStr})
-          </small><br/>
-          <small>${job.type} | ${job.location}</small><br/>
-          ${job.description ? `<p class="mb-0">${job.description}</p>` : ''}
-        </div>
-      `;
+          <div class="mb-3">
+            <strong>${job.title}</strong><br/>
+            <small class="text-muted">
+              ${formatMonthYear(job.start)} – ${formatMonthYear(job.end)} (${durationStr})
+            </small><br/>
+            <small>${job.type} | ${job.location}</small><br/>
+            ${job.description ? `<p class="mb-0">${job.description}</p>` : ''}
+          </div>
+        `;
     }).join('');
 
     const card = document.createElement('div');
@@ -117,6 +119,7 @@ function renderTimeline(data) {
     container.innerHTML = '';
 
     const categorySet = new Set();
+    const companyCards = [];
 
     data.timeline.forEach(category => {
         const categoryName = category.category;
@@ -124,10 +127,26 @@ function renderTimeline(data) {
 
         category.entries.forEach(entry => {
             const locationText = `${entry.city}, ${entry.region}, ${entry.country}`;
+
+            // Sort jobs per company
+            entry.jobs.sort((a, b) => parseDate(a.start) - parseDate(b.start));
+
+            // Find latest end date per company
+            const latestJob = entry.jobs.reduce((latest, current) =>
+                parseDate(current.end) > parseDate(latest.end) ? current : latest
+            );
+            const latestEndDate = parseDate(latestJob.end);
+
+            // Generate card and save with end date
             const card = createCompanyCard(entry.organization, locationText, entry.jobs, categoryName);
-            container.appendChild(card);
+            companyCards.push({ card, latestEndDate });
         });
     });
+
+    // Sort company cards by latest end date (descending)
+    companyCards
+        .sort((a, b) => b.latestEndDate - a.latestEndDate)
+        .forEach(item => container.appendChild(item.card));
 
     renderFilters([...categorySet]);
 }
