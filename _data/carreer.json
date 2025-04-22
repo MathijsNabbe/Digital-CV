@@ -9,42 +9,5 @@
             "start": "07-2024",
             "end": "08-2024"
         }
-    ],
-    "certificates": [
-        {
-            "name": "Rijbewijs B",
-            "issuer": "CBR",
-            "date": "06-2021",
-            "valid_until": "",
-            "reference": ""
-        },
-        {
-            "name": "Training Advanced-Forms voor 365 Business Central",
-            "issuer": "Quadira B.V.",
-            "date": "11-08-2022",
-            "valid_until": "",
-            "reference": ""
-        },
-        {
-            "name": "Training Advanced-Forms voor F&O Full",
-            "issuer": "Quadira B.V.",
-            "date": "29-08-2022",
-            "valid_until": "",
-            "reference": ""
-        },
-        {
-            "name": "Bedrijfshulpverlener (BHV)",
-            "issuer": "EHBOService.eu",
-            "date": "03-2023",
-            "valid_until": "03-2024",
-            "reference": "2023030179"
-        },
-        {
-            "name": "Horeca OpleidingsProgramma (HOP)",
-            "issuer": "Royal Swinkels",
-            "date": "03-2025",
-            "valid_until": "",
-            "reference": ""
-        }
     ]
 }

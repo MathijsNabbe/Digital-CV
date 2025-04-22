@@ -118,6 +118,39 @@ function createConferenceCard(entry, category) {
     return { card, latestEndDate: dateObj };
 }
 
+function createCertificateCard(entry, category) {
+    const start = parseDate(entry.start);
+    const end = entry.end ? parseDate(entry.end) : null;
+    const dateRange = entry.end
+        ? `${formatMonthYear(entry.start)} – ${formatMonthYear(entry.end)}`
+        : formatMonthYear(entry.start);
+
+    const card = document.createElement('div');
+    card.className = 'timeline-5 right-5';
+    card.dataset.category = category;
+
+    const downloadUrl = entry.file ? `${window.location.origin}/${entry.file}` : null;
+    const downloadBtn = entry.file
+        ? `<a href="${downloadUrl}" download class="btn btn-sm btn-outline-primary float-end" title="Download certificate">
+         <i class="fas fa-download"></i>
+       </a>`
+        : '';
+
+    card.innerHTML = `
+      <div class="card">
+        <div class="card-body p-4">
+          ${downloadBtn}
+          <h5>${entry.name}</h5>
+          <hr>
+          <p class="mb-1"><strong>${entry.issuer}</strong></p>
+          <span class="small text-muted">${dateRange}</span>
+        </div>
+      </div>
+    `;
+    return { card, latestEndDate: end || start };
+}
+
+
 function renderFilters(categories) {
     const filterContainer = document.getElementById('categoryFilters');
     filterContainer.innerHTML = '';
@@ -170,11 +203,15 @@ function renderTimeline(data) {
                     parseDate(current.end || null) > parseDate(latest.end || null) ? current : latest
                 );
                 allCards.push({ card, latestEndDate: parseDate(latestEnd.end || null) });
-            } else {
+            } else if (entry.eventName) {
                 const conf = createConferenceCard(entry, categoryName);
                 allCards.push(conf);
+            } else if (entry.name && entry.issuer) {
+                const cert = createCertificateCard(entry, categoryName);
+                allCards.push(cert);
             }
         });
+
     });
 
     allCards
