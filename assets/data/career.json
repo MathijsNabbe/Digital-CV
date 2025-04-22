@@ -343,6 +343,40 @@
           "location": "On-site"
         }
       ]
+    },
+    {
+      "category": "Certificates",
+      "entries": [
+        {
+          "name": "Rijbewijs B",
+          "issuer": "CBR",
+          "start": "06-2021"
+        },
+        {
+          "name": "Advanced-Forms voor 365 Business Central",
+          "issuer": "Quadira B.V.",
+          "start": "11-08-2022",
+          "file": "/assets/documents/certificates/Certificaat AF voor BC.pdf"
+        },
+        {
+          "name": "Advanced-Forms voor 365 Business Central",
+          "issuer": "Quadira B.V.",
+          "start": "29-08-2022",
+          "file": "/assets/documents/certificates/Certificaat AF voor F&O.pdf"
+        },
+        {
+          "name": "Bedrijfshulpverlener (BHV)",
+          "issuer": "EHBOService.eu",
+          "start": "03-2023",
+          "end": "03-2024"
+        },
+        {
+          "name": "Horeca Opleidings Programma (HOP)",
+          "issuer": "Royal Swinkels",
+          "start": "03-2025",
+          "file": "/assets/documents/certificates/HOP_Swincles.pdf"
+        }
+      ]
     }
   ]
 }
