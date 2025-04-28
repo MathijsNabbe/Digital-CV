@@ -230,6 +230,153 @@
           ]
         }
       ]
+    },
+    {
+      "category": "Conferences & Events",
+      "entries": [
+        {
+          "organization": ".NET Zuid",
+          "eventName": "Messaging: The fine line between awesome and awful",
+          "spokesperson": {
+            "name": "Laila Bougria",
+            "link": "https://www.linkedin.com/in/lailabougria/"
+          },
+          "venue": {
+            "name": "Sioux Technologies",
+            "link": "https://www.sioux.eu/"
+          },
+          "city": "Eindhoven",
+          "region": "Noord-Holland",
+          "country": "Netherlands",
+          "date": "27-02-2023",
+          "type": "Hearing",
+          "location": "On-site"
+        },
+        {
+          "organization": ".NET Zuid",
+          "eventName": "There's no such thing as plain text",
+          "spokesperson": {
+            "name": "Dylan Beattie",
+            "link": "https://www.linkedin.com/in/dylanbeattie/"
+          },
+          "venue": {
+            "name": "ASML Technologies",
+            "link": "https://www.asml.nl"
+          },
+          "city": "Veldhoven",
+          "region": "Noord-Holland",
+          "country": "Netherlands",
+          "date": "11-04-2023",
+          "type": "Hearing",
+          "location": "On-site"
+        },
+        {
+          "organization": ".NET Zuid",
+          "eventName": "What's new in C#12 and .NET8",
+          "spokesperson": {
+            "name": "Fons Sonnemans",
+            "link": "https://www.linkedin.com/in/fonssonnemans/"
+          },
+          "venue": {
+            "name": "HighTech Innovators",
+            "link": "https://www.yoursoftwarebetter.nl"
+          },
+          "city": "'s-Hertogenbosch",
+          "region": "Noord-Holland",
+          "country": "Netherlands",
+          "date": "16-11-2023",
+          "type": "Hearing",
+          "location": "On-site"
+        },
+        {
+          "organization": ".NET Zuid",
+          "eventName": "Unlocking the power of the Fluent UI Blazor library",
+          "spokesperson": {
+            "name": "Vincent Baaij",
+            "link": "https://www.linkedin.com/in/vincentbaaij/"
+          },
+          "venue": {
+            "name": "HighTech Innovators",
+            "link": "https://www.yoursoftwarebetter.nl"
+          },
+          "city": "'s-Hertogenbosch",
+          "region": "Noord-Holland",
+          "country": "Netherlands",
+          "date": "24-09-2024",
+          "type": "Hearing",
+          "location": "On-site"
+        },
+        {
+          "organization": ".NET Zuid",
+          "eventName": "An evening with Scott Hanselman",
+          "spokesperson": {
+            "name": "Scott Hanselman",
+            "link": "https://www.linkedin.com/in/shanselman/"
+          },
+          "venue": {
+            "name": "Theater de Schalm",
+            "link": "https://www.deschalm.com/"
+          },
+          "city": "Veldhoven",
+          "region": "Noord-Holland",
+          "country": "Netherlands",
+          "date": "22-11-2024",
+          "type": "Hearing",
+          "location": "On-site"
+        },
+        {
+          "organization": ".NET Zuid",
+          "eventName": "An evening with Scott Hanselman",
+          "spokesperson": {
+            "name": "Johan Smarius",
+            "link": "https://www.linkedin.com/in/johansmarius/"
+          },
+          "venue": {
+            "name": "Betabit, Techtower Eindhoven",
+            "link": "https://techtowereindhoven.nl/faciliteiten#skybar"
+          },
+          "city": "Eindhoven ",
+          "region": "Noord-Holland",
+          "country": "Netherlands",
+          "date": "20-02-2025",
+          "type": "Hearing",
+          "location": "On-site"
+        }
+      ]
+    },
+    {
+      "category": "Certificates",
+      "entries": [
+        {
+          "name": "Rijbewijs B",
+          "issuer": "CBR",
+          "start": "06-2021"
+        },
+        {
+          "name": "Advanced-Forms voor 365 Business Central",
+          "issuer": "Quadira B.V.",
+          "start": "11-08-2022",
+          "file": "/assets/documents/certificates/Certificaat AF voor BC.pdf"
+        },
+        {
+          "name": "Advanced-Forms voor 365 Business Central",
+          "issuer": "Quadira B.V.",
+          "start": "29-08-2022",
+          "file": "/assets/documents/certificates/Certificaat AF voor F&O.pdf"
+        },
+        {
+          "name": "Bedrijfshulpverlener (BHV)",
+          "issuer": "EHBOService.eu",
+          "start": "03-2023",
+          "end": "03-2024"
+        },
+        {
+          "name": "Horeca Opleidings Programma (HOP)",
+          "issuer": "Royal Swinkels",
+          "start": "03-2025",
+          "file": "/assets/documents/certificates/HOP_Swincles.pdf"
+        }
+      ]
     }
   ]
 }
