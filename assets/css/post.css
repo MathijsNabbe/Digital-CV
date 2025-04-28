@@ -1,7 +1,15 @@
-.post {
-    max-width: 800px;
+/* Layout */
+.layout {
+    display: flex;
+    max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
+}
+
+/* Post Content */
+.post {
+    flex: 1;
+    max-width: 800px;
     font-family: Arial, sans-serif;
 }
 
