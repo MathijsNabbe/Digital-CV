@@ -16,7 +16,10 @@
         {% endif %}
         {% endfor %}
         <li class="tree-nav-category{% if is_active_category %} expanded{% endif %}">
-            <button class="tree-nav-toggle" type="button">{{ category[0] }} ({{ category[1] | size }})</button>
+            <button class="tree-nav-toggle" type="button">
+                <span class="tree-nav-arrow"></span>
+                {{ category[0] }} ({{ category[1] | size }})
+            </button>
             <ul class="tree-nav-posts" {% unless is_active_category %}style="display: none;" {% endunless %}>
                 {% for post in category[1] %}
                 <li>
