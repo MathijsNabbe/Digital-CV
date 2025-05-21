@@ -1,0 +1,19 @@
+<nav class="sidebar">
+    <div class="profile-picture">
+        <img src="/assets/images/profile.jpg" alt="Profile Picture">
+    </div>
+
+    <ul>
+        {% assign categories = site.categories | sort %}
+        {% for category in categories %}
+        <li>
+            <a href="#">{{ category[0] }} ({{ category[1] | size }})</a>
+            <ul>
+                {% for post in category[1] %}
+                <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>

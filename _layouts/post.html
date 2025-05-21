@@ -14,27 +14,10 @@
         integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqHWv+Ph/RyMn9vHlfzmtl4Fn8mj6bhwDo65ygD3z6KY2"
         crossorigin="anonymous"></script>
 </head>
+
 <body>
 
-    <nav class="sidebar">
-        <div class="profile-picture">
-            <img src="/assets/images/profile.jpg" alt="Profile Picture">
-        </div>
-
-        <ul>
-            {% assign categories = site.categories | sort %}
-            {% for category in categories %}
-            <li>
-                <a href="#">{{ category[0] }} ({{ category[1] | size }})</a>
-                <ul>
-                    {% for post in category[1] %}
-                    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
-                    {% endfor %}
-                </ul>
-            </li>
-            {% endfor %}
-        </ul>
-    </nav>
+    {% include post-navigation.html %}
 
     <main class="content">
         <article class="post">
