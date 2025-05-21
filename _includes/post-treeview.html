@@ -1,0 +1,43 @@
+<ul class="tree-nav">
+    {% assign current_url = page.url %}
+    {% assign categories = site.categories | sort %}
+    {% for category in categories %}
+    {% assign is_active_category = false %}
+    {% for post in category[1] %}
+    {% if post.url == current_url %}
+    {% assign is_active_category = true %}
+    {% endif %}
+    {% endfor %}
+    <li class="tree-nav-category{% if is_active_category %} expanded{% endif %}">
+        <button class="tree-nav-toggle" type="button">
+            <span class="tree-nav-arrow"></span>
+            {{ category[0] }} ({{ category[1] | size }})
+        </button>
+        <ul class="tree-nav-posts" {% unless is_active_category %}style="display: none;" {% endunless %}>
+            {% for post in category[1] %}
+            <li>
+                <a href="{{ post.url | relative_url }}"
+                    class="tree-nav-link{% if post.url == current_url %} active{% endif %}">
+                    {{ post.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".tree-nav-toggle").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                const categoryItem = btn.parentElement;
+                const subList = categoryItem.querySelector(".tree-nav-posts");
+                const isExpanded = categoryItem.classList.toggle("expanded");
+
+                if (subList) {
+                    subList.style.display = isExpanded ? "block" : "none";
+                }
+            });
+        });
+    });
+</script>
