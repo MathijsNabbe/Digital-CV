@@ -23,3 +23,49 @@ nav ul li a:hover,
     background: #007bff;
     color: #fff;
 }
+
+.tree-nav {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tree-nav-category {
+    margin: 10px 0;
+}
+
+.tree-nav-toggle {
+    background: none;
+    border: none;
+    color: #333;
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tree-nav-toggle:hover,
+.tree-nav-link.active {
+    background: #007bff;
+    color: #fff;
+}
+
+.tree-nav-posts {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 5px;
+}
+
+.tree-nav-link {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.tree-nav-link:hover {
+    background: #007bff;
+    color: #fff;
+}
