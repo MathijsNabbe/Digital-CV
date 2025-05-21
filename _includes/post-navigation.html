@@ -2,7 +2,9 @@
     <div class="profile-picture">
         <img src="/assets/images/profile.jpg" alt="Profile Picture">
     </div>
-
+    <hr>
+    <a href="/index.html" class="site-switch">Portfolio</a>
+    <hr>
     <ul>
         {% assign categories = site.categories | sort %}
         {% for category in categories %}
@@ -16,8 +18,5 @@
         </li>
         {% endfor %}
 
-    </ul>
-    <ul>
-        <li><a href="/index.html">Portfolio</a></li>
     </ul>
 </nav>
