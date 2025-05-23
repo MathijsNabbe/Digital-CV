@@ -1,0 +1,38 @@
+<nav class="sidebar">
+    <div class="profile-picture">
+        <img src="/assets/images/profile.jpg" alt="profile">
+    </div>
+    <hr>
+    <a href="/index.html" class="site-switch">Portfolio</a>
+    <hr>
+    <ul class="tree-nav">
+        {% assign current_url = page.url %}
+        {% assign categories = site.categories | sort %}
+        {% for category in categories %}
+        {% assign is_active_category = false %}
+        {% for post in category[1] %}
+        {% if post.url == current_url %}
+        {% assign is_active_category = true %}
+        {% endif %}
+        {% endfor %}
+        <li class="tree-nav-category{% if is_active_category %} expanded{% endif %}">
+            <button class="tree-nav-toggle" type="button">
+                <span class="tree-nav-arrow"></span>
+                {{ category[0] }} ({{ category[1] | size }})
+            </button>
+            <ul class="tree-nav-posts" {% unless is_active_category %}style="display: none;" {% endunless %}>
+                {% for post in category[1] %}
+                <li>
+                    <a href="{{ post.url | relative_url }}"
+                        class="tree-nav-link{% if post.url == current_url %} active{% endif %}">
+                        {{ post.title }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</nav>
+
+<script src="/assets/scripts/tree-view.js"></script>
