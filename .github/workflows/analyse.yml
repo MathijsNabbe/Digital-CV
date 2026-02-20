@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Analyze
+    name: Analyse
     runs-on: [self-hosted, Linux]
 
     steps:
