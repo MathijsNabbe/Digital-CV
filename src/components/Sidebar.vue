@@ -5,6 +5,12 @@
       <div class="profile">
         <h1>{{ profile.name }}</h1>
         <p class="title">{{ profile.title }}</p>
+
+        <div v-if="activeJobs.length" class="active-jobs">
+          <div v-for="job in activeJobs" :key="job.role + job.company" class="active-job">
+            {{ job.role }} at {{ job.company }}
+          </div>
+        </div>
       </div>
 
       <nav class="nav">
@@ -23,7 +29,9 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
+import { computed } from 'vue'
+
+const props = defineProps<{
   profile: {
     name: string
     title: string
@@ -32,7 +40,26 @@ defineProps<{
       url: string
     }[]
   }
+  work: {
+    company: string
+    jobs: {
+      role: string
+      start: string
+      end?: string
+    }[]
+  }[]
 }>()
+
+const activeJobs = computed(() => {
+  return props.work.flatMap(company =>
+    company.jobs
+      .filter(job => !job.end)
+      .map(job => ({
+        role: job.role,
+        company: company.company
+      }))
+  )
+})
 
 function getIconClass(platform: string) {
   const map: Record<string, string> = {
@@ -74,6 +101,20 @@ h1 {
   color: #6b7280;
   margin-top: 8px;
   font-size: 14px;
+}
+
+.active-jobs {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 8px;
+}
+
+.active-job {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.4;
 }
 
 .nav {
