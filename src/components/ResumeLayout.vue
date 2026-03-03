@@ -22,7 +22,7 @@ const work = resume.work
 <style scoped>
 .layout {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
   font-family: 'Inter', sans-serif;
   background: #f5f7fa;
 }
@@ -31,5 +31,6 @@ const work = resume.work
   flex: 1;
   padding: 60px;
   overflow-y: auto;
+  height: 100vh;
 }
 </style>

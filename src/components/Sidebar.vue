@@ -7,7 +7,6 @@
 
     <nav class="nav">
       <a href="#work">Work Experience</a>
-      <!-- Later you can add Education, Projects etc -->
     </nav>
   </aside>
 </template>
@@ -23,13 +22,15 @@ defineProps<{
 
 <style scoped>
 .sidebar {
-  width: 300px;
-  background: white;
-  padding: 50px 30px;
-  border-right: 1px solid #e5e7eb;
-  position: sticky;
-  top: 0;
+  width: 280px;
   height: 100vh;
+  padding: 40px 20px;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  overflow: hidden;
 }
 
 .profile {
