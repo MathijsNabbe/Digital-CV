@@ -1,0 +1,59 @@
+<template>
+  <div class="container">
+    <h1>Under construction!</h1>
+    <p>
+      This website is currently in development.
+    </p>
+
+    <a class="button" href="https://www.linkedin.com/in/mathijs-nabbe/" target="_blank" rel="noopener noreferrer">
+      View my carreer on LinkedIn
+    </a>
+
+    <footer>
+      © 2026 – Available soon
+    </footer>
+  </div>
+</template>
+
+<style scoped>
+.container {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 40px 30px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2.2rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+a.button {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #ffffff;
+  color: #0a66c2;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+a.button:hover {
+  background-color: #e6e6e6;
+  color: #004182;
+}
+
+footer {
+  margin-top: 25px;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+</style>
