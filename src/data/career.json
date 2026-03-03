@@ -1,7 +1,21 @@
 {
   "profile": {
     "name": "Mathijs Nabbe",
-    "title": "Fullstack Software Engineer"
+    "title": "Fullstack Software Engineer",
+    "socials": [
+      {
+        "platform": "github",
+        "url": "https://github.com/MathijsNabbe"
+      },
+      {
+        "platform": "instagram",
+        "url": "https://www.instagram.com/bossche_barrels/"
+      },
+      {
+        "platform": "linkedin",
+        "url": "https://www.linkedin.com/in/mathijs-nabbe/"
+      }
+    ]
   },
   "work": [
     {
