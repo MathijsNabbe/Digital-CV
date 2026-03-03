@@ -5,27 +5,32 @@
   },
   "work": [
     {
-      "company": "Tech Corp",
-      "role": "Software Developer",
-      "period": "2022 - Present",
-      "location": "Amsterdam, NL",
-      "description": "Leading frontend architecture and building scalable web applications.",
-      "highlights": [
-        "Architected Vue 3 migration",
-        "Improved performance by 35%",
-        "Mentored 4 junior developers"
-      ]
-    },
-    {
-      "company": "Startup X",
-      "role": "Full Stack Developer",
-      "period": "2019 - 2022",
-      "location": "Utrecht, NL",
-      "description": "Built cloud-native applications with .NET and Vue.",
-      "highlights": [
-        "Designed REST APIs",
-        "Implemented CI/CD pipelines",
-        "Deployed to Azure"
+      "company": "Quadira B.V.",
+      "location": "Veghel, Noord-Brabant",
+      "jobs": [
+        {
+          "role": "Software Developer",
+          "start": "2022-08",
+          "end": "2026-04",
+          "description": "As a software-developer at Quadira i have had the chance to pursue the ambition to become a Fullstack Developer, working on different aspects of the in-house software Advanced-Forms, and the future successor Advanced-Forms Next",
+          "highlights": [
+            "Designed new modules for Advanced-Forms, including connectors to SharePoint and MijnOverheid",
+            "Contributed to the (architectural) design for the startup of Advanced-Forms Next",
+            "Completely overhauled the CI/CD pipelines for all product & services",
+            "Created new backup- and disaster-recovery protocols for all production environments",
+            "Setup a local server network & maintained different development tools"
+          ]
+        },
+        {
+          "role": "First Emergency Responder",
+          "start": "2023-03",
+          "end": "2026-04",
+          "highlights": [
+            "Kept first aid kits & fire extinguisers up to date.",
+            "Created and maintained flight routes & emergency plans throughout the 2 buildings.",
+            "Created an emergency & evacuation plan, and setup logs for workplace incidents"
+          ]
+        }
       ]
     }
   ]
