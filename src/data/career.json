@@ -1,0 +1,32 @@
+{
+  "profile": {
+    "name": "Mathijs Nabbe",
+    "title": "Fullstack Software Engineer"
+  },
+  "work": [
+    {
+      "company": "Tech Corp",
+      "role": "Software Developer",
+      "period": "2022 - Present",
+      "location": "Amsterdam, NL",
+      "description": "Leading frontend architecture and building scalable web applications.",
+      "highlights": [
+        "Architected Vue 3 migration",
+        "Improved performance by 35%",
+        "Mentored 4 junior developers"
+      ]
+    },
+    {
+      "company": "Startup X",
+      "role": "Full Stack Developer",
+      "period": "2019 - 2022",
+      "location": "Utrecht, NL",
+      "description": "Built cloud-native applications with .NET and Vue.",
+      "highlights": [
+        "Designed REST APIs",
+        "Implemented CI/CD pipelines",
+        "Deployed to Azure"
+      ]
+    }
+  ]
+}

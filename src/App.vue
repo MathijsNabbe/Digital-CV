@@ -1,7 +1,7 @@
-<script setup lang="ts">
-import HelloWorld from './components/UnderConstruction.vue'
-</script>
-
 <template>
-  <HelloWorld msg="Vite + Vue" />
+  <ResumeLayout />
 </template>
+
+<script setup lang="ts">
+import ResumeLayout from './components/ResumeLayout.vue'
+</script>
