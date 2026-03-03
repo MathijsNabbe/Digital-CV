@@ -4,6 +4,10 @@
 
     <div v-for="company in work" :key="company.company" class="company-group">
       <p class="company-name">{{ company.company }} • {{ company.location }}</p>
+      <p class="company-period">
+        {{ formatCompanyPeriod(company.jobs) }}
+        <span v-if="company.jobs.length > 0"> • {{ companyDuration(company.jobs) }}</span>
+      </p>
 
       <div v-for="job in company.jobs" :key="job.role + job.start" class="job">
         <div class="header">
@@ -24,8 +28,10 @@
 <script setup lang="ts">
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
+import minMax from 'dayjs/plugin/minMax'
 
 dayjs.extend(duration)
+dayjs.extend(minMax)
 
 interface Job {
   role: string
@@ -68,6 +74,43 @@ function jobDuration(start: string, end?: string) {
   if (remMonths > 0) parts.push(`${remMonths} month${remMonths > 1 ? 's' : ''}`)
   return parts.join(' ')
 }
+
+/**
+ * Calculate total duration of all jobs in a company
+ * from earliest start to latest end
+ */
+function companyDuration(jobs: Job[]) {
+  if (!jobs || jobs.length === 0) return ''
+
+  const startDates = jobs.map(j => dayjs(j.start))
+  const endDates = jobs.map(j => j.end ? dayjs(j.end) : dayjs())
+
+  const earliest = dayjs.min(...startDates)
+  const latest = dayjs.max(...endDates)
+
+  if (!earliest || !latest) return ''
+
+  const months = latest.diff(earliest, 'month')
+  const years = Math.floor(months / 12)
+  const remMonths = months % 12
+  const parts = []
+  if (years > 0) parts.push(`${years} year${years > 1 ? 's' : ''}`)
+  if (remMonths > 0) parts.push(`${remMonths} month${remMonths > 1 ? 's' : ''}`)
+  return parts.join(' ')
+}
+
+/**
+ * Format company period as "MMM YYYY – MMM YYYY"
+ */
+function formatCompanyPeriod(jobs: Job[]) {
+  if (!jobs || jobs.length === 0) return ''
+  const startDates = jobs.map(j => dayjs(j.start))
+  const endDates = jobs.map(j => j.end ? dayjs(j.end) : dayjs())
+  const earliest = dayjs.min(...startDates)
+  const latest = dayjs.max(...endDates)
+  if (!earliest || !latest) return ''
+  return `${earliest.format('MMM YYYY')} – ${latest.format('MMM YYYY')}`
+}
 </script>
 
 <style scoped>
@@ -82,15 +125,24 @@ h2 {
   color: #111827;
 }
 
+.company-group {
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
 .company-name {
   font-weight: 600;
   font-size: 20px;
-  margin-top: 30px;
   color: #374151;
+  margin-top: 20px;
+  margin-bottom: 2px;
 }
 
-.company-group {
-  border-bottom: 1px solid #e5e7eb;
+.company-period {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 4px 0 20px 0;
 }
 
 .job {
