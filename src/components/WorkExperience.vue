@@ -38,7 +38,7 @@ interface Job {
   start: string
   end?: string
   description?: string
-  highlights: string[]
+  highlights?: string[]
 }
 
 interface Company {
