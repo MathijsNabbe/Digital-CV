@@ -1,13 +1,24 @@
 <template>
   <aside class="sidebar">
-    <div class="profile">
-      <h1>{{ profile.name }}</h1>
-      <p class="title">{{ profile.title }}</p>
+
+    <div>
+      <div class="profile">
+        <h1>{{ profile.name }}</h1>
+        <p class="title">{{ profile.title }}</p>
+      </div>
+
+      <nav class="nav">
+        <a href="#work">Work Experience</a>
+      </nav>
     </div>
 
-    <nav class="nav">
-      <a href="#work">Work Experience</a>
-    </nav>
+    <div v-if="profile.socials?.length" class="socials">
+      <a v-for="social in profile.socials" :key="social.platform" :href="social.url" target="_blank" rel="noopener"
+        class="social-btn">
+        <i :class="getIconClass(social.platform)" />
+      </a>
+    </div>
+
   </aside>
 </template>
 
@@ -16,8 +27,22 @@ defineProps<{
   profile: {
     name: string
     title: string
+    socials?: {
+      platform: string
+      url: string
+    }[]
   }
 }>()
+
+function getIconClass(platform: string) {
+  const map: Record<string, string> = {
+    github: 'fab fa-github',
+    linkedin: 'fab fa-linkedin-in',
+    instagram: 'fab fa-instagram'
+  }
+
+  return map[platform.toLowerCase()] ?? 'fas fa-link'
+}
 </script>
 
 <style scoped>
@@ -29,22 +54,14 @@ defineProps<{
   border-right: 1px solid #e5e7eb;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: space-between;
+  box-sizing: border-box;
   overflow: hidden;
 }
 
 .profile {
   text-align: center;
   margin-bottom: 60px;
-}
-
-.avatar {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 4px solid #f1f5f9;
 }
 
 h1 {
@@ -74,5 +91,34 @@ h1 {
 
 .nav a:hover {
   color: #2563eb;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  background: #f1f5f9;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #374151;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  background: #2563eb;
+  color: white;
 }
 </style>
