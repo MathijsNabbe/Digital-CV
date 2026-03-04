@@ -8,10 +8,12 @@
 
         <div v-if="activeJobs.length" class="active-jobs">
           <div v-for="job in activeJobs" :key="job.role + job.company" class="active-job">
-            {{ job.role }} at {{ job.company }}
+            <strong>{{ job.role }}</strong> <span>at {{ job.company }}</span>
           </div>
         </div>
       </div>
+
+      <div class="divider"></div>
 
       <nav class="nav">
         <a href="#work">Work Experience</a>
@@ -103,18 +105,28 @@ h1 {
   font-size: 14px;
 }
 
+.divider {
+  height: 1px;
+  background: #f1f5f9;
+  margin: 30px 0;
+}
+
 .active-jobs {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  font-size: 8px;
 }
 
 .active-job {
   font-size: 13px;
   color: #374151;
   line-height: 1.4;
+  text-align: center;
+}
+
+.active-job span {
+  color: #6b7280;
 }
 
 .nav {
