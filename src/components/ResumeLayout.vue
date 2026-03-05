@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <Sidebar :profile="profile" />
+    <Sidebar :profile="profile" :work="work" />
 
     <div class="content">
       <WorkExperience :work="work" />
