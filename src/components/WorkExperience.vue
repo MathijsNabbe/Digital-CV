@@ -2,7 +2,7 @@
   <section id="work">
     <h2>Work Experience</h2>
 
-    <div v-for="company in work" :key="company.company" class="company-group">
+    <div v-for="company in filteredWork" :key="company.company" class="company-group">
       <p class="company-name">{{ company.company }} • {{ company.location }}</p>
       <p class="company-period">
         {{ formatCompanyPeriod(company.jobs) }}
@@ -26,6 +26,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 import minMax from 'dayjs/plugin/minMax'
@@ -39,6 +40,7 @@ interface Job {
   end?: string
   description?: string
   highlights?: string[]
+  categories?: string[]
 }
 
 interface Company {
@@ -49,7 +51,25 @@ interface Company {
 
 const props = defineProps<{
   work: Company[]
+  activeFilters: string[]
 }>()
+
+const filteredWork = computed(() => {
+
+  if (props.activeFilters.length === 0)
+    return props.work
+
+  return props.work
+    .map(company => ({
+      ...company,
+      jobs: company.jobs.filter(job =>
+        job.categories?.some(cat =>
+          props.activeFilters.includes(cat)
+        )
+      )
+    }))
+    .filter(company => company.jobs.length > 0)
+})
 
 /**
  * Format the start and end dates as "MMM YYYY – MMM YYYY" or "MMM YYYY – Present"
