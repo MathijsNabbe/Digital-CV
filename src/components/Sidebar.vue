@@ -18,11 +18,38 @@
       <nav class="nav">
         <a href="#work">Work Experience</a>
       </nav>
+
+      <div class="divider"></div>
+
+      <div class="filters">
+        <button class="filter-toggle" @click="showFilters = !showFilters">
+          Filters
+        </button>
+
+        <div v-if="showFilters" class="filter-list">
+          <button
+            v-for="cat in categories"
+            :key="cat"
+            class="filter-btn"
+            :class="{ active: activeFilters.includes(cat) }"
+            @click="$emit('toggleFilter', cat)"
+          >
+            {{ cat }}
+          </button>
+        </div>
+      </div>
+
     </div>
 
     <div v-if="profile.socials?.length" class="socials">
-      <a v-for="social in profile.socials" :key="social.platform" :href="social.url" target="_blank" rel="noopener"
-        class="social-btn">
+      <a
+        v-for="social in profile.socials"
+        :key="social.platform"
+        :href="social.url"
+        target="_blank"
+        rel="noopener"
+        class="social-btn"
+      >
         <i :class="getIconClass(social.platform)" />
       </a>
     </div>
@@ -31,7 +58,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
+
+const showFilters = ref(false)
 
 const props = defineProps<{
   profile: {
@@ -50,7 +79,11 @@ const props = defineProps<{
       end?: string
     }[]
   }[]
+  categories: string[]
+  activeFilters: string[]
 }>()
+
+defineEmits(['toggleFilter'])
 
 const activeJobs = computed(() => {
   return props.work.flatMap(company =>
@@ -85,7 +118,6 @@ function getIconClass(platform: string) {
   flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 .profile {
@@ -121,7 +153,6 @@ h1 {
 .active-job {
   font-size: 13px;
   color: #374151;
-  line-height: 1.4;
   text-align: center;
 }
 
@@ -139,11 +170,45 @@ h1 {
   text-decoration: none;
   color: #374151;
   font-weight: 500;
-  transition: 0.2s;
 }
 
 .nav a:hover {
   color: #2563eb;
+}
+
+.filters {
+  margin-top: 20px;
+}
+
+.filter-toggle {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filter-list {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.filter-btn {
+  border: 1px solid #e5e7eb;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
 }
 
 .socials {
@@ -167,7 +232,6 @@ h1 {
   color: #374151;
   font-size: 16px;
   text-decoration: none;
-  transition: all 0.2s ease;
 }
 
 .social-btn:hover {
