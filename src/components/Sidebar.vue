@@ -23,7 +23,8 @@
 
       <div class="filters">
         <button class="filter-toggle" @click="showFilters = !showFilters">
-          Filters
+          <span>Filters</span>
+          <i :class="showFilters ? 'fas fa-chevron-up' : 'fas fa-chevron-down'"></i>
         </button>
 
         <div v-if="showFilters" class="filter-list">
@@ -176,33 +177,56 @@ h1 {
   color: #2563eb;
 }
 
+/* ------------------- Filters ------------------- */
 .filters {
   margin-top: 20px;
 }
 
 .filter-toggle {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border: none;
   background: #f9fafb;
-  border-radius: 6px;
+  border-radius: 50px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
   cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-toggle i {
+  margin-left: 6px;
+  font-size: 12px;
 }
 
 .filter-list {
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
 }
 
 .filter-btn {
   border: 1px solid #e5e7eb;
-  background: white;
-  padding: 4px 8px;
-  border-radius: 5px;
+  background: #f9fafb;
+  padding: 4px 12px;
+  border-radius: 20px;
   font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.2s ease;
+  color: #374151;
+}
+
+.filter-btn:hover {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
 }
 
 .filter-btn.active {
@@ -210,7 +234,7 @@ h1 {
   color: white;
   border-color: #2563eb;
 }
-
+/* ------------------- Socials ------------------- */
 .socials {
   display: flex;
   justify-content: center;
@@ -224,11 +248,9 @@ h1 {
   height: 36px;
   background: #f1f5f9;
   border-radius: 6px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   color: #374151;
   font-size: 16px;
   text-decoration: none;
