@@ -8,6 +8,7 @@
 
       <nav class="nav">
         <a href="#work">Work Experience</a>
+        <a href="#education">Education & Certificates</a>
       </nav>
 
       <div class="divider"></div>

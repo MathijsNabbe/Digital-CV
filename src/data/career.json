@@ -38,6 +38,7 @@
         {
           "role": "First Emergency Responder",
           "start": "2023-03",
+          "categories": ["First Aid"],
           "highlights": [
             "Kept first aid kits & fire extinguisers up to date.",
             "Created and maintained flight routes & emergency plans throughout the 2 buildings.",
@@ -180,6 +181,58 @@
           "end": "2017-02"
         }
       ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Rijbewijs B",
+      "institution": "CBR",
+      "date": "2021-06"
+    },
+    {
+      "title": "Advanced-Forms voor 365 Business Central",
+      "institution": "Quadira B.V.",
+      "date": "2022-08",
+      "categories": ["Development"]
+    },
+    {
+      "title": "Advanced-Forms voor 365 Finance & Operations",
+      "institution": "Quadira B.V.",
+      "date": "2022-08",
+      "categories": ["Development"]
+    },
+    {
+      "title": "First Emergency Responder (BHV)",
+      "institution": "EHBOService.eu",
+      "date": "2023-03",
+      "categories": ["First Aid"]
+    },
+    {
+      "title": "First Emergency Responder (BHV)",
+      "institution": "Arbocentrum",
+      "date": "2025-12",
+      "categories": ["First Aid"],
+      "link": "/documents/Certificaat M.A.H. Nabbe.pdf"
+    },
+    {
+      "title": "Horeca Opleidings Programma (HOP)",
+      "institution": "Royal Swinkels",
+      "date": "2025-03",
+      "categories": ["Hospitality"],
+      "link": "/documents/HOP_Swincles.pdf"
+    },
+    {
+      "title": "Havo (Natuur & Gezondheid)",
+      "institution": "Rodenborch College",
+      "start": "2013-09",
+      "end": "2019-07"
+    },
+    {
+      "title": "Applicatie- en Mediaontwikkelaar (MBO 4)",
+      "institution": "Koning Willem I College",
+      "start": "2019-09",
+      "end": "2022-07",
+      "categories": ["Development"]
     }
   ]
 }
