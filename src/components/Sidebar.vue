@@ -20,13 +20,13 @@
 
         <div v-if="showFilters" class="filter-list">
           <button
-            v-for="cat in categories"
-            :key="cat"
+            v-for="category in categories"
+            :key="category"
             class="filter-btn"
-            :class="{ active: activeFilters.includes(cat) }"
-            @click="$emit('toggleFilter', cat)"
+            :class="{ active: activeFilters.includes(category) }"
+            @click="$emit('toggleFilter', category)"
           >
-            {{ cat }}
+            {{ category }}
           </button>
         </div>
       </div>
