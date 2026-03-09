@@ -8,7 +8,7 @@
       @toggleFilter="toggleFilter"
     />
 
-    <div class="content">
+    <div class="content" id="content">
       <WorkExperience
         :work="work"
         :activeFilters="activeFilters"
