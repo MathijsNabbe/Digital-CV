@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
 import ProfileCard from './ProfileCard.vue'
 import SidebarSocials from './SidebarSocials.vue'
 
