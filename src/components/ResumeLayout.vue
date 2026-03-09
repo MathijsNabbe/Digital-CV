@@ -8,9 +8,14 @@
       @toggleFilter="toggleFilter"
     />
 
-    <div class="content">
+    <div class="content" id="content">
       <WorkExperience
         :work="work"
+        :activeFilters="activeFilters"
+      />
+
+      <Education
+        :education="education"
         :activeFilters="activeFilters"
       />
     </div>
@@ -21,11 +26,13 @@
 import { ref, computed } from 'vue'
 import Sidebar from './Sidebar.vue'
 import WorkExperience from './WorkExperience.vue'
+import Education from './Education.vue'
 
 import resume from '../data/career.json'
 
 const profile = resume.profile
 const work = resume.work
+const education = resume.education
 
 const activeFilters = ref<string[]>([])
 
@@ -40,6 +47,10 @@ const categories = computed(() => {
     company.jobs.forEach(job => {
       job.categories?.forEach((c: string) => set.add(c))
     })
+  })
+
+  education?.forEach(item => {
+    item.categories?.forEach((c: string) => set.add(c))
   })
 
   return Array.from(set).sort()

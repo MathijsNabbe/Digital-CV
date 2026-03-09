@@ -7,7 +7,12 @@
       <div class="divider"></div>
 
       <nav class="nav">
-        <a href="#work">Work Experience</a>
+        <a href="#work" @click.prevent="scrollToSection('work')">
+          Work Experience
+        </a>
+        <a href="#education" @click.prevent="scrollToSection('education')">
+          Education & Certificates
+        </a>
       </nav>
 
       <div class="divider"></div>
@@ -44,6 +49,19 @@ import ProfileCard from './ProfileCard.vue'
 import SidebarSocials from './SidebarSocials.vue'
 
 const showFilters = ref(false)
+
+function scrollToSection(id: string) {
+  const container = document.getElementById('content')
+  const target = document.getElementById(id)
+  if (!container || !target) return
+
+  const offset = target.offsetTop - container.offsetTop
+
+  container.scrollTo({
+    top: offset,
+    behavior: 'smooth',
+  })
+}
 
 const props = defineProps<{
   profile: {
