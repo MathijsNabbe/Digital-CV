@@ -124,12 +124,21 @@ function companyDuration(jobs: Job[]) {
  */
 function formatCompanyPeriod(jobs: Job[]) {
   if (!jobs || jobs.length === 0) return ''
+
   const startDates = jobs.map(j => dayjs(j.start))
   const endDates = jobs.map(j => j.end ? dayjs(j.end) : dayjs())
   const earliest = dayjs.min(...startDates)
   const latest = dayjs.max(...endDates)
+
   if (!earliest || !latest) return ''
-  return `${earliest.format('MMM YYYY')} – ${latest.format('MMM YYYY')}`
+
+  // check if any job is still active (no end)
+  const hasCurrentJob = jobs.some(j => !j.end)
+
+  const startStr = earliest.format('MMM YYYY')
+  const endStr = hasCurrentJob ? 'Present' : latest.format('MMM YYYY')
+
+  return `${startStr} – ${endStr}`
 }
 </script>
 

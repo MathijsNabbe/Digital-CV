@@ -64,6 +64,39 @@
       ]
     },
     {
+      "company": "Fletcher Hotels",
+      "location": "Rosmalen",
+      "jobs": [
+        {
+          "role": "Restaurant Host",
+          "start": "2021-11",
+          "end": "2022-09", 
+          "categories": ["Hospitality"],
+          "description": "Responsible for running the restaurant and guarding the quality of our services.",
+          "highlights": [
+            "Serve as a supervisor when needed and/or when teamleads are absent.",
+            "Represent the company and handle both positive and negative feedback from customers, both in the restaurant and the hotel.",
+            "Financially and administratively close off each day."
+          ]
+        },
+        {
+          "role": "Restaurant Server",
+          "start": "2021-06",
+          "end": "2022-09", 
+          "categories": ["Hospitality"],
+          "highlights": [
+            "Running a collection of task in the bar, restaurant, kitchen, and warehouses.",
+            "Serve roomservice to hotel guests."
+          ]
+        },
+        {
+          "role": "Housekeeping",
+          "start": "2021-04",
+          "end": "2021-06"
+        }
+      ]
+    },
+    {
       "company": "COERS Online Branding",
       "location": "'s-Hertogenbosch",
       "jobs": [
@@ -84,6 +117,67 @@
           "categories": ["Development"],
           "start": "2020-08",
           "end": "2021-02"
+        }
+      ]
+    },
+    {
+      "company": "Q-Wash",
+      "location": "Rosmalen",
+      "jobs": [
+        {
+          "role": "Carwash Employee",
+          "categories": ["Retail"],
+          "start": "2020-11",
+          "end": "2021-07",
+          "highlights": [
+            "Ensure cars are loaded on the conveyors correctly.",
+            "Monitor all machines and chemical levels during operation.",
+            "Start the production-line at the start of the day, and shut down and clean on closure." 
+          ]
+        }
+      ]
+    },
+    {
+      "company": "McDonald's",
+      "location": "Rosmalen",
+      "jobs": [
+        {
+          "role": "Crew member",
+          "start": "2017-11",
+          "end": "2020-09",
+          "categories": ["Hospitality"],
+          "description": "Allround function in both production and service."
+        },
+        {
+          "role": "RDM Food Quality",
+          "start": "2018-05",
+          "end": "2020-04",
+          "categories": ["Hospitality"],
+          "description": "Member of a board responsibly for guarding food quality and production."
+        },
+        {
+          "role": "Technical Maintenance",
+          "start": "2019-11",
+          "end": "2020-02",
+          "description": "Clean, repair and maintain all machinery within the production-lines."
+        },
+        {
+          "role": "Crewtrainer",
+          "start": "2018-06",
+          "end": "2020-09",
+          "description": "Additional tasks & responsibilities as a crew-member, such as reporting, training and improving the staff and their procedures."
+        }
+      ]
+    },
+    {
+      "company": "Didden Distributie Maatschappij",
+      "location": "'s-Hertogenbosch'",
+      "jobs": [
+        {
+          "role": "Orderpicker",
+          "categories": ["Logistics"],
+          "start": "2016-11",
+          "end": "2017-02"
         }
       ]
     }

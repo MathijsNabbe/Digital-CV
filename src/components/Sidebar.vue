@@ -2,16 +2,7 @@
   <aside class="sidebar">
 
     <div>
-      <div class="profile">
-        <h1>{{ profile.name }}</h1>
-        <p class="title">{{ profile.title }}</p>
-
-        <div v-if="activeJobs.length" class="active-jobs">
-          <div v-for="job in activeJobs" :key="job.role + job.company" class="active-job">
-            <strong>{{ job.role }}</strong> <span>at {{ job.company }}</span>
-          </div>
-        </div>
-      </div>
+      <ProfileCard :profile="profile" :work="work" image="/images/profile.jpg" />
 
       <div class="divider"></div>
 
@@ -29,37 +20,28 @@
 
         <div v-if="showFilters" class="filter-list">
           <button
-            v-for="cat in categories"
-            :key="cat"
+            v-for="category in categories"
+            :key="category"
             class="filter-btn"
-            :class="{ active: activeFilters.includes(cat) }"
-            @click="$emit('toggleFilter', cat)"
+            :class="{ active: activeFilters.includes(category) }"
+            @click="$emit('toggleFilter', category)"
           >
-            {{ cat }}
+            {{ category }}
           </button>
         </div>
       </div>
 
     </div>
 
-    <div v-if="profile.socials?.length" class="socials">
-      <a
-        v-for="social in profile.socials"
-        :key="social.platform"
-        :href="social.url"
-        target="_blank"
-        rel="noopener"
-        class="social-btn"
-      >
-        <i :class="getIconClass(social.platform)" />
-      </a>
-    </div>
+    <SidebarSocials :socials="profile.socials" />
 
   </aside>
 </template>
 
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { ref } from 'vue'
+import ProfileCard from './ProfileCard.vue'
+import SidebarSocials from './SidebarSocials.vue'
 
 const showFilters = ref(false)
 
@@ -85,27 +67,6 @@ const props = defineProps<{
 }>()
 
 defineEmits(['toggleFilter'])
-
-const activeJobs = computed(() => {
-  return props.work.flatMap(company =>
-    company.jobs
-      .filter(job => !job.end)
-      .map(job => ({
-        role: job.role,
-        company: company.company
-      }))
-  )
-})
-
-function getIconClass(platform: string) {
-  const map: Record<string, string> = {
-    github: 'fab fa-github',
-    linkedin: 'fab fa-linkedin-in',
-    instagram: 'fab fa-instagram'
-  }
-
-  return map[platform.toLowerCase()] ?? 'fas fa-link'
-}
 </script>
 
 <style scoped>
@@ -121,44 +82,10 @@ function getIconClass(platform: string) {
   box-sizing: border-box;
 }
 
-.profile {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-h1 {
-  font-size: 22px;
-  margin: 0;
-  font-weight: 600;
-}
-
-.title {
-  color: #6b7280;
-  margin-top: 8px;
-  font-size: 14px;
-}
-
 .divider {
   height: 1px;
   background: #f1f5f9;
   margin: 30px 0;
-}
-
-.active-jobs {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.active-job {
-  font-size: 13px;
-  color: #374151;
-  text-align: center;
-}
-
-.active-job span {
-  color: #6b7280;
 }
 
 .nav {
@@ -233,31 +160,5 @@ h1 {
   background: #2563eb;
   color: white;
   border-color: #2563eb;
-}
-/* ------------------- Socials ------------------- */
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 14px;
-  padding-top: 20px;
-  border-top: 1px solid #f1f5f9;
-}
-
-.social-btn {
-  width: 36px;
-  height: 36px;
-  background: #f1f5f9;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #374151;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.social-btn:hover {
-  background: #2563eb;
-  color: white;
 }
 </style>
