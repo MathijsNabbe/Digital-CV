@@ -2,7 +2,7 @@
     <div class="profile">
 
         <div class="avatar">
-            <img src="../images/profile.jpg" alt="Profile picture" />
+            <img src="../images/profile.jpg" alt="Profile" />
         </div>
 
         <h1>{{ profile.name }}</h1>
