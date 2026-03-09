@@ -3,6 +3,11 @@
 
     <div>
       <div class="profile">
+
+        <div class="avatar">
+          <img src="../images/profile.jpg" alt="Profile picture" />
+        </div>
+
         <h1>{{ profile.name }}</h1>
         <p class="title">{{ profile.title }}</p>
 
@@ -259,5 +264,39 @@ h1 {
 .social-btn:hover {
   background: #2563eb;
   color: white;
+}
+
+/* -------- Profile Avatar -------- */
+
+.avatar {
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 18px auto;
+  border-radius: 50%;
+  padding: 3px;
+
+  /* soft luxury frame */
+  background: linear-gradient(145deg, #f8fafc, #e5e7eb);
+
+  /* subtle depth */
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.08),
+    0 2px 4px rgba(0,0,0,0.04);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+
+  object-fit: cover;
+  object-position: center;
+
+  /* clean edge */
+  border: 2px solid white;
 }
 </style>
