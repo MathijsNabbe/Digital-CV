@@ -19,12 +19,26 @@
   },
   "work": [
     {
+      "company": "STA Software (Pro4All)",
+      "location": "Gemert",
+      "jobs": [
+        {
+          "role": "Fullstack Software Engineer",
+          "start": "2026-04",
+          "employmentType": "Full-time",
+          "workArrangement": "On-site",
+          "categories": ["Development"]
+        }
+      ]
+    },
+    {
       "company": "Quadira",
       "location": "Veghel",
       "jobs": [
         {
           "role": "Software Developer",
           "start": "2022-08",
+          "end": "2026-03",
           "employmentType": "Full-time",
           "workArrangement": "On-site",
           "categories": ["Development"],
@@ -40,6 +54,7 @@
         {
           "role": "First Emergency Responder",
           "start": "2023-03",
+          "end": "2026-03",
           "categories": ["First Aid"],
           "highlights": [
             "Kept first aid kits & fire extinguisers up to date.",
