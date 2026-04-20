@@ -25,6 +25,8 @@
         {
           "role": "Software Developer",
           "start": "2022-08",
+          "employmentType": "Full-time",
+          "workArrangement": "On-site",
           "categories": ["Development"],
           "description": "As a software-developer at Quadira i have had the chance to pursue the ambition to become a Fullstack Developer, working on different aspects of the in-house software Advanced-Forms, and the startup of the future successor Advanced-Forms Next.",
           "highlights": [
@@ -54,6 +56,7 @@
         {
           "role": "Tasting Room Host",
           "start": "2024-12",
+          "employmentType": "Part-time",
           "categories": ["Hospitality"],
           "description": "Apart from my technical career i like to keep busy in the weekends. As a host in Bus Whisky's tasting room i am responsible for creating an extraordinary evening for all whisky-lovers after the afternoon-tours through the distillery and before they will spend the night in our on-site B&B.",
           "highlights": [
@@ -71,7 +74,8 @@
         {
           "role": "Restaurant Host",
           "start": "2021-11",
-          "end": "2022-09", 
+          "end": "2022-09",
+          "employmentType": "Part-time",
           "categories": ["Hospitality"],
           "description": "Responsible for running the restaurant and guarding the quality of our services.",
           "highlights": [
@@ -83,7 +87,8 @@
         {
           "role": "Restaurant Server",
           "start": "2021-06",
-          "end": "2022-09", 
+          "end": "2022-09",
+          "employmentType": "Part-time",
           "categories": ["Hospitality"],
           "highlights": [
             "Running a collection of task in the bar, restaurant, kitchen, and warehouses.",
@@ -93,7 +98,8 @@
         {
           "role": "Housekeeping",
           "start": "2021-04",
-          "end": "2021-06"
+          "end": "2021-06",
+          "employmentType": "Part-time"
         }
       ]
     },
@@ -105,19 +111,25 @@
           "role": "Intern Wordpress Developer",
           "categories": ["Development"],
           "start": "2022-02",
-          "end": "2022-08"
+          "end": "2022-08",
+          "employmentType": "Internship",
+          "workArrangement": "Hybrid"
         },
         {
           "role": "Junior Wordpress Developer",
           "categories": ["Development"],
           "start": "2020-12",
-          "end": "2022-03"
+          "end": "2022-03",
+          "employmentType": "Part-time",
+          "workArrangement": "Hybrid"
         },
         {
           "role": "Intern Wordpress Developer",
           "categories": ["Development"],
           "start": "2020-08",
-          "end": "2021-02"
+          "end": "2021-02",
+          "employmentType": "Internship",
+          "workArrangement": "Hybrid"
         }
       ]
     },
@@ -130,6 +142,7 @@
           "categories": ["Retail"],
           "start": "2020-11",
           "end": "2021-07",
+          "employmentType": "Part-time",
           "highlights": [
             "Ensure cars are loaded on the conveyors correctly.",
             "Monitor all machines and chemical levels during operation.",
@@ -146,6 +159,7 @@
           "role": "Crew member",
           "start": "2017-11",
           "end": "2020-09",
+          "employmentType": "Part-time",
           "categories": ["Hospitality"],
           "description": "Allround function in both production and service."
         },
@@ -172,13 +186,14 @@
     },
     {
       "company": "Didden Distributie Maatschappij",
-      "location": "'s-Hertogenbosch'",
+      "location": "'s-Hertogenbosch",
       "jobs": [
         {
           "role": "Orderpicker",
           "categories": ["Logistics"],
           "start": "2016-11",
-          "end": "2017-02"
+          "end": "2017-02",
+          "employmentType": "Part-time"
         }
       ]
     }

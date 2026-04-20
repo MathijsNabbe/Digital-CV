@@ -15,6 +15,8 @@
           <span class="period">{{ formatPeriod(job.start, job.end) }} • {{ jobDuration(job.start, job.end) }}</span>
         </div>
 
+        <p v-if="jobEmploymentMeta(job)" class="job-meta">{{ jobEmploymentMeta(job) }}</p>
+
         <p class="description">{{ job.description }}</p>
 
         <ul>
@@ -41,6 +43,8 @@ interface Job {
   description?: string
   highlights?: string[]
   categories?: string[]
+  employmentType?: string
+  workArrangement?: string
 }
 
 interface Company {
@@ -53,6 +57,10 @@ const props = defineProps<{
   work: Company[]
   activeFilters: string[]
 }>()
+
+function jobEmploymentMeta(job: Job) {
+  return [job.employmentType, job.workArrangement].filter(Boolean).join(' · ')
+}
 
 const filteredWork = computed(() => {
 
@@ -194,6 +202,12 @@ h3 {
 .period {
   font-size: 14px;
   color: #6b7280;
+}
+
+.job-meta {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0 0 8px 0;
 }
 
 .description {
